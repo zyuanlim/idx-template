@@ -50,8 +50,6 @@
         '';
         create-venv = ''
           python -m venv .venv
-          source .venv/bin/activate
-          pip install -r requirements.txt
         '';
         # Open editors for the following files by default, if they exist:
         default.openFiles = [ ".idx/dev.nix" "README.md" ];
@@ -60,6 +58,10 @@
       onStart = {
         # Example: start a background task to watch and re-build backend code
         # watch-backend = "npm run watch-backend";
+        activate-venv = ''
+          source .venv/bin/activate
+          pip-sync requirements.txt
+        '';
       };
     };
   };
