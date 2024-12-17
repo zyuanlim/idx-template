@@ -51,7 +51,7 @@
         create-venv = ''
           python -m venv .venv
           source .venv/bin/activate
-          pip-sync requirements.txt
+          pip install -r requirements.txt
         '';
         # Open editors for the following files by default, if they exist:
         default.openFiles = [ ".idx/dev.nix" "README.md" ];
